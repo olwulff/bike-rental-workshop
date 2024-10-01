@@ -3,6 +3,7 @@ package io.axoniq.demo.bikerental.rental.ui;
 import io.axoniq.demo.bikerental.coreapi.rental.BikeStatus;
 import io.axoniq.demo.bikerental.coreapi.rental.RegisterBikeCommand;
 import io.axoniq.demo.bikerental.coreapi.rental.RequestBikeCommand;
+import io.axoniq.demo.bikerental.coreapi.rental.ReturnBikeCommand;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
@@ -53,9 +54,7 @@ public class RentalController {
 
     @PostMapping("/returnBike")
     public CompletableFuture<String> returnBike(@RequestParam("bikeId") String bikeId, @RequestParam("location") String location) {
-        
-        
-        return null;
+        return commandGateway.send(new ReturnBikeCommand(bikeId, location));
     }
 
     @GetMapping("/bikes")

@@ -255,7 +255,20 @@ and queries are balanced between nodes.
 
 Congratulations! You've implemented the core concepts. But there is a lot more to explore. In these labs, we've
 only covered the basics of the functional components of Axon Framework. There are a lot of non-functional configuration
-items hidden in this application.
+items hidden in this application.   99  curl -X POST "http://localhost:8080/requestBike?bikeId=e90afb58-fa1f-4c95-8bad-20b3bb02fb97&renter=oliver"
+  100  curl -X GET "http://localhost:8081/findPayment?reference=46bd9832c-4ede-4829-9bde-9978ae513073"
+  101  curl -X GET "http://localhost:8081/findPayment?reference=6bd9832c-4ede-4829-9bde-9978ae513073"
+  102  curl -X GET "http://localhost:8081/acceptPayment?id=8cfc4559-9d0d-484b-b5bc-aef753bf1c65"
+  103  curl -X POST "http://localhost:8081/acceptPayment?id=8cfc4559-9d0d-484b-b5bc-aef753bf1c65"
+  104  curl -X POST "http://localhost:8080/returnBike?bikeId=e90afb58-fa1f-4c95-8bad-20b3bb02fb97&location=Amsterdam"
+  105  curl -X POST "http://localhost:8080/requestBike?bikeId=e90afb58-fa1f-4c95-8bad-20b3bb02fb97&renter=oliver"
 
 You can take a look at the [Bike Rental Demo application](https://github.com/abuijze/bike-rental-extended) on GitHub fur
 the full implementation, including deadlines and subscription queries.
+
+
+
+
+
+
+
